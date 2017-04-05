@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-4.3.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+           http://www.springframework.org/schema/jdbc 
+           http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd">
+	<!-- jdbc.properties文件路径  
+	<context:property-placeholder location="classpath:jdbc.properties" />-->
+
+
+	<!-- 注解配置 -->
+	<context:annotation-config />
+
+	<!-- 自动扫描的包名 -->
+	<context:component-scan base-package="com.csz">
+	</context:component-scan>
+
+	<!-- 开启切面代理 -->
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+
+	<!-- 数据源dataSource -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/learn" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean>
+	<!-- 集成myBaits框架,配置sqlSessionFatory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="typeAliasesPackage" value="com.csz.domain" />
+		<property name="mapperLocations" value="classpath:mybatis/*Mapper.xml" />
+		<property name="configLocation" value="classpath:spring/mybatisConfig.xml" />
+		<property name="configurationProperties">
+			<props>
+				<prop key="dialect">mysql</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- 扫描basePackage下所有以@MyBatisRepository标识的 接口 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.csz.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+
+	<!-- 事务管理 配置开始 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<!--允许使用注解方式配置事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager"
+		proxy-target-class="true" />
+	<!-- 事务管理 配置结束 -->
+</beans>
