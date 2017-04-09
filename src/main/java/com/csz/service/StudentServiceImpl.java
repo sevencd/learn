@@ -1,5 +1,7 @@
 package com.csz.service;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -13,7 +15,9 @@ import com.csz.domain.Student;
 import com.csz.mapper.StudentMapper;
 @Service
 public class StudentServiceImpl implements IStudent{
-	
+	public  StudentServiceImpl(){
+		System.out.println("StudentServiceImpl初始化成功");
+	}
 	@Autowired SqlSessionFactory sqlSessionFactory;
 	private @Autowired StudentMapper studentMapper;
 	public Student getById(int id) {
@@ -24,6 +28,12 @@ public class StudentServiceImpl implements IStudent{
 		session.close();*/
 
 		return studentMapper.selectByPrimaryKey(id);
+	}
+	public List<Student> getAllStudent() {
+		SqlSession session=sqlSessionFactory.openSession();
+		List<Student> list =  session.selectList("com.csz.mapper.StudentMapper.selectAll");
+		session.close();
+		return list;
 	}
 	public int addStudent(Student stu) {
 		// TODO Auto-generated method stub

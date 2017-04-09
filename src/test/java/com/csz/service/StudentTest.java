@@ -2,16 +2,11 @@ package com.csz.service;
 
 
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 import javax.sql.DataSource;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -21,6 +16,9 @@ import com.csz.domain.Student;
 @ContextConfiguration(locations = { "classpath:spring/applicationContext.xml"})
 public class StudentTest{
 	private @Autowired IStudent stu;
+	public  StudentTest(){
+		System.out.println("StudentTest初始化成功");
+	}
 	@Test
 	public void select(){
 		Student i=stu.getById(1);
@@ -38,7 +36,7 @@ public class StudentTest{
 	}
 	@Test
 	public void jdbcdbrouting(){
-		AbstractRoutingDataSource ar;
+		//AbstractRoutingDataSource ar;
 		DataSource ds;
 	}
 	

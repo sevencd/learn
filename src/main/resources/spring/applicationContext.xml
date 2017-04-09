@@ -13,12 +13,10 @@
            http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
            http://www.springframework.org/schema/jdbc 
            http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd">
-	<!-- jdbc.properties文件路径  
-	<context:property-placeholder location="classpath:jdbc.properties" />-->
+	<!-- jdbc.properties文件路径  -->
+	<context:property-placeholder location="classpath:jdbc.properties" />
 
 
-	<!-- 注解配置 -->
-	<context:annotation-config />
 
 	<!-- 自动扫描的包名 -->
 	<context:component-scan base-package="com.csz">
@@ -30,17 +28,17 @@
 	<!-- 数据源dataSource -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/learn" />
-		<property name="username" value="root" />
-		<property name="password" value="root" />
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
 	</bean>
 	<!-- 集成myBaits框架,配置sqlSessionFatory -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="typeAliasesPackage" value="com.csz.domain" />
-		<property name="mapperLocations" value="classpath:mybatis/*Mapper.xml" />
-		<property name="configLocation" value="classpath:spring/mybatisConfig.xml" />
+		<property name="mapperLocations" value="mybatis/*Mapper.xml" />
+		<property name="configLocation" value="spring/mybatisConfig.xml" />
 		<property name="configurationProperties">
 			<props>
 				<prop key="dialect">mysql</prop>

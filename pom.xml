@@ -65,62 +65,28 @@
 			<dependency> <groupId>commons-logging</groupId> <artifactId>commons-logging</artifactId> 
 			<version>1.2</version> </dependency> -->
 
-		<!-- spring 依赖包 -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-beans</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context-support</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-aop</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-tx</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-websocket</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
+		<!-- spring 依赖包 <dependency> <groupId>org.springframework</groupId> <artifactId>spring-core</artifactId> 
+			<version>${org.springframework.version}</version> </dependency> <dependency> 
+			<groupId>org.springframework</groupId> <artifactId>spring-beans</artifactId> 
+			<version>${org.springframework.version}</version> </dependency> <dependency> 
+			<groupId>org.springframework</groupId> <artifactId>spring-context</artifactId> 
+			<version>${org.springframework.version}</version> </dependency> <dependency> 
+			<groupId>org.springframework</groupId> <artifactId>spring-context-support</artifactId> 
+			<version>${org.springframework.version}</version> </dependency> <dependency> 
+			<groupId>org.springframework</groupId> <artifactId>spring-jdbc</artifactId> 
+			<version>${org.springframework.version}</version> </dependency> <dependency> 
+			<groupId>org.springframework</groupId> <artifactId>spring-aop</artifactId> 
+			<version>${org.springframework.version}</version> </dependency> <dependency> 
+			<groupId>org.springframework</groupId> <artifactId>spring-orm</artifactId> 
+			<version>${org.springframework.version}</version> </dependency> <dependency> 
+			<groupId>org.springframework</groupId> <artifactId>spring-tx</artifactId> 
+			<version>${org.springframework.version}</version> </dependency> <dependency> 
+			<groupId>org.springframework</groupId> <artifactId>spring-web</artifactId> 
+			<version>${org.springframework.version}</version> </dependency> <dependency> 
+			<groupId>org.springframework</groupId> <artifactId>spring-webmvc</artifactId> 
+			<version>${org.springframework.version}</version> </dependency> <dependency> 
+			<groupId>org.springframework</groupId> <artifactId>spring-websocket</artifactId> 
+			<version>${org.springframework.version}</version> </dependency> -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
@@ -149,6 +115,13 @@
 				<configuration>
 					<verbose>true</verbose>
 					<overwrite>true</overwrite>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
 				</configuration>
 			</plugin>
 			<plugin>

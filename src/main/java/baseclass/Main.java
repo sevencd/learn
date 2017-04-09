@@ -15,7 +15,9 @@ public class Main {
 					.getConstructor();
 			/*Method m=customerApplication.getMethod("a", void.class);*/
 			Son son=(Son) constructor.newInstance();
+			ClassLoader classLoader2 = Son.class.getClassLoader();
 			son.a("s");
+			
 			System.out.println("成功");
 	}
 
