@@ -1,9 +1,21 @@
 package baseclass;
 
-public class IntegerTest {
-	public static void main(String[] args) {
-		getBytes();
+import java.util.concurrent.atomic.AtomicInteger;
 
+public class IntegerTest {
+    private static AtomicInteger atomicInteger = new AtomicInteger(0);
+    private static final int HASH_INCREMENT = 0x61c88647;
+
+	public static void main(String[] args) {
+		atomicInteger.getAndAdd(HASH_INCREMENT);
+		System.out.println(atomicInteger.get());
+	    System.out.println(atomicInteger.get()&15);
+		atomicInteger.getAndAdd(HASH_INCREMENT);
+		System.out.println(atomicInteger.get());
+	    System.out.println(atomicInteger.get()&15);
+		atomicInteger.getAndAdd(HASH_INCREMENT);
+		System.out.println(atomicInteger.get());
+	    System.out.println(atomicInteger.get()&15);
 	}
 	//将正整数字符串转换为数字
 	public static int parseToInt(String s){
@@ -22,5 +34,17 @@ public class IntegerTest {
 		System.out.println(a[0]);
 		System.out.println(a[1]);
 
+	}
+	public static void atomicInteger(){
+		AtomicInteger a=new AtomicInteger();
+		System.out.println(a.getAndIncrement());
+		System.out.println(a.intValue());
+
+	}
+	protected static class ThreadLocalMap{
+		int a=2;
+		int getA(){
+			return a;
+		}
 	}
 }

@@ -1,5 +1,7 @@
 package baseclass;
 
+
+
 public class Son extends ExtendsTest {
 	public Son() {
 	}

@@ -2,6 +2,7 @@ package com.csz.jdbc;
 
 import com.csz.domain.Student;
 import com.csz.util.PropertiesUtil;
+import com.mysql.jdbc.Statement;
 
 import baseclass.Main;
 
@@ -9,6 +10,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Properties;
@@ -71,6 +73,28 @@ public class JdbcConnectionFactory {
 	}
 
 	public static void main(String[] str) {
-		getConn();
+		Connection conn=getConn();
+		java.sql.Statement s=null;
+		try {
+			s = conn.createStatement();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ResultSet rs=null;
+		try {
+			rs = s.executeQuery("select * from student");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			while(rs.next()){
+				System.out.println(rs.getString("name"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

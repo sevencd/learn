@@ -8,7 +8,11 @@ public class Student {
     private Short sex;
 
     private Integer age;
-
+    public Student(){
+    }
+    public Student(int id){
+    	this.id=id;
+    }
     public Integer getId() {
         return id;
     }
@@ -39,5 +43,8 @@ public class Student {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+    public int hashCode(){
+        return id;
     }
 }

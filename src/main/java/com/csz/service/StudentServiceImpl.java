@@ -16,7 +16,7 @@ import com.csz.mapper.StudentMapper;
 @Service
 public class StudentServiceImpl implements IStudent{
 	public  StudentServiceImpl(){
-		System.out.println("StudentServiceImpl初始化成功");
+		System.out.println("StudentServiceImpl 构造函数");
 	}
 	@Autowired SqlSessionFactory sqlSessionFactory;
 	private @Autowired StudentMapper studentMapper;
@@ -38,5 +38,8 @@ public class StudentServiceImpl implements IStudent{
 	public int addStudent(Student stu) {
 		// TODO Auto-generated method stub
 		return studentMapper.insert(stu);
+	}
+	public String toString(){
+		return "StudentServiceImpl实例化成功";
 	}
 }

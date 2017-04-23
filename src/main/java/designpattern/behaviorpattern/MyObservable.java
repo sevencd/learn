@@ -1,4 +1,4 @@
-package com.csz.designpattern;
+package designpattern.behaviorpattern;
 
 import java.util.Observable;
 import java.util.Observer;
