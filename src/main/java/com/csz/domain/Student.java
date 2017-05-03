@@ -1,7 +1,7 @@
 package com.csz.domain;
 
 public class Student {
-    private Integer id;
+    private int id;
 
     private String name;
 
@@ -13,7 +13,7 @@ public class Student {
     public Student(int id){
     	this.id=id;
     }
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
