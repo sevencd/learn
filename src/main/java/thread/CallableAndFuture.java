@@ -14,8 +14,8 @@ import org.apache.log4j.Logger;
 
 public class CallableAndFuture {
 	public static void main(String[] args) {
-		ExecutorService threadPool = Executors.newSingleThreadExecutor();
-		Future<Integer> future = threadPool.submit(new Callable<Integer>() {
+		ExecutorService tp = Executors.newSingleThreadExecutor();
+		Future<Integer> future = tp.submit(new Callable<Integer>() {
 			public Integer call() throws Exception {
 				System.out.println("dfj");
 				return new Random().nextInt(100);

@@ -86,10 +86,10 @@ public class MyArray {
 		 * System.out.println("调用ensureCapacity()方法所用时间：" + (endTime -
 		 * startTime) + "ms");
 		 */
-		List<Student> list=new ArrayList<>(12);
+		/*List<Student> list=new ArrayList<>(12);
 		for(int i=0;i<12;i++){
 			list.add(new Student(i));
-		}
+		}*/
 		/*Thread t1=new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -101,7 +101,7 @@ public class MyArray {
 				}				
 			}
 		});*/
-		Callable<Integer> callable = new Callable<Integer>() {
+/*		Callable<Integer> callable = new Callable<Integer>() {
 			public Integer call() throws Exception {
 				Iterator<Student> ite=list.iterator();
 				while(ite.hasNext()){
@@ -111,7 +111,7 @@ public class MyArray {
 				}	
 				return new Random().nextInt(100);
 			}
-		};
+		};*/
 		/*Thread t2=new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -139,6 +139,7 @@ public class MyArray {
 		});*/
 		
 		
+/*
 		try {
 			System.out.println(CallableThread.runByPool(callable));
 		} catch (InterruptedException e) {
@@ -149,5 +150,6 @@ public class MyArray {
 		for(Student s:list){
 			System.out.println(s.getId());
 		}
+*/
 	}
 }

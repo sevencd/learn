@@ -63,7 +63,6 @@ public class JdbcConnectionFactory {
 		try {
 			Class.forName(driver); // classLoader,加载对应驱动
 			conn = (Connection) DriverManager.getConnection(url, userName, password);
-
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
