@@ -4,14 +4,14 @@ public class Tree {
 	private Node<Integer> root;
 
 	// 插入
-	/*public void insert(int key) {
+	public void insert(int key) {
 		if (root == null) {
-			Node<Integer> node = new Node<>(key);
+			Node<Integer> node = new Node<Integer>(key);
 			root = node;
 		} else {
 			Node<Integer> cur = root;
 			Node<Integer> parent;
-			Node<Integer> node = new Node<>(key);
+			Node<Integer> node = new Node<Integer>(key);
 			while (true) {
 				parent = cur;
 				if (key < cur.item) {
@@ -29,7 +29,7 @@ public class Tree {
 				}
 			}
 		}
-	}*/
+	}
 
 	// 查找
 	public Node<Integer> get(int key) {
