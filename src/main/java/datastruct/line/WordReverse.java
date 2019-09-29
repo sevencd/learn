@@ -12,11 +12,6 @@ public class WordReverse {
 		for (int i = 0; i < str.length(); i++) {
 			c.push(str.charAt(i));
 		}
-	/*	char[] newC=new char[str.length()];
-		for (int i = 0; i < str.length()&&!c.isEmpty(); i++) {
-			newC[i]=c.pop();
-		}
-		String s=new String(newC);*/
 		String output="";
 		while(!c.isEmpty()){
 			char t=c.pop();
