@@ -1,5 +1,8 @@
 package algorithm.sort;
-
+/*
+插入算法的核心思想是取未排序区间中的元素，在已排序区间中找到合适的插入位置将其插入，
+并保证已排序区间数据一直有序。重复这个过程，直到未排序区间中元素为空，算法结束。
+ */
 public class InsertSort extends Sort {
     public static void main(String[] args) {
         InsertSort sort = new InsertSort();
