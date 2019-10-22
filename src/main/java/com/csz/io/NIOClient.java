@@ -52,7 +52,6 @@ public class NIOClient {
 	}
 	private void process(String name) throws IOException {
 		boolean unfinesh=true;
-		// TODO Auto-generated method stub
 		while(unfinesh){
 			int i=selector.select();
 			if(i==0){

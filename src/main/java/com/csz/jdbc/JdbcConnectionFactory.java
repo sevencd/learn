@@ -77,14 +77,12 @@ public class JdbcConnectionFactory {
 		try {
 			s = conn.createStatement();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		ResultSet rs=null;
 		try {
 			rs = s.executeQuery("select * from student");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
@@ -92,7 +90,6 @@ public class JdbcConnectionFactory {
 				System.out.println(rs.getString("name"));
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

@@ -18,7 +18,7 @@ public class LRULinkedMap<K,V> {
 
     public LRULinkedMap(int cacheSize) {
         this.cacheSize = cacheSize;
-        cacheMap = new LinkedHashMap(16,0.75F,true);
+        cacheMap = new LinkedHashMap(8,0.75F,true);
     }
 
     public void put(K key,V value){

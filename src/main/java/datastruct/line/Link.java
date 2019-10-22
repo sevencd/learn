@@ -1,15 +1,15 @@
 package datastruct.line;
 
-public class Link {
-	private int data;
+public class Link<E> {
+	private E data;
 	private Link next;
-	public Link(int data) {
+	public Link(E data) {
 		this.data = data;
 	}
-	public int getData() {
+	public E getData() {
 		return data;
 	}
-	public void setData(int data) {
+	public void setData(E data) {
 		this.data = data;
 	}
 	public Link getNext() {

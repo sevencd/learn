@@ -14,7 +14,6 @@ public class Resource2 {
 	static Logger slflog = LoggerFactory.getLogger(Resource.class);
 
 	public Resource2(long beginTime) {
-		// TODO Auto-generated constructor stub
 		this.beginTime=beginTime;
 	}
 
@@ -29,7 +28,6 @@ public class Resource2 {
 			//rs.close();
 			//poolConn.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -42,7 +40,6 @@ public class Resource2 {
 			int row = poolConn.insert("insert into student(name,age,sex) values(csz,11,1)");
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -57,7 +54,6 @@ public class Resource2 {
 				slflog.info("时间差"+(endTime-beginTime));
 
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -78,7 +74,6 @@ public class Resource2 {
 			try {
 				wait();
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

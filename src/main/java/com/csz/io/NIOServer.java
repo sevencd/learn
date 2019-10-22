@@ -39,7 +39,6 @@ public class NIOServer {
 			server.register(selector, SelectionKey.OP_ACCEPT);
 			slflog.info("NIO服务器准备好了,等待客户端连接"+port);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -64,7 +63,6 @@ public class NIOServer {
 		}
 	}
 	private void process(SelectionKey key) throws IOException {
-		// TODO Auto-generated method stub
 		if(key.isAcceptable()){
 			SocketChannel client=server.accept();
 			client.configureBlocking(false);

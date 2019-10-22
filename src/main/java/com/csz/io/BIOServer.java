@@ -18,7 +18,6 @@ public class BIOServer {
             server = new ServerSocket(port);
             slflog.info("服务器准备好了,等待客户端连接" + port);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

@@ -30,7 +30,6 @@ public class DBPoolImpl implements IDBPool {
 		try {
 			init();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
 	}
@@ -89,7 +88,6 @@ public class DBPoolImpl implements IDBPool {
 	}
 
 	public synchronized void createConnection(int poolSize) {
-		// TODO Auto-generated method stub
 		if (poolSize + poolConnection.size() > maxSize) {
 			throw new RuntimeException("超过连接上限");
 		}

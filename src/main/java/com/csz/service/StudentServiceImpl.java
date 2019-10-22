@@ -21,7 +21,6 @@ public class StudentServiceImpl implements IStudent{
 	@Autowired SqlSessionFactory sqlSessionFactory;
 	private @Autowired StudentMapper studentMapper;
 	public Student getById(int id) {
-		// TODO Auto-generated method stub
 		//studentMapper=new studentMapper
 		/*SqlSession session=sqlSessionFactory.openSession();
 		Student student = (Student) session.selectOne("com.csz.mapper.StudentMapper.selectByPrimaryKey", id);
@@ -36,7 +35,6 @@ public class StudentServiceImpl implements IStudent{
 		return list;
 	}
 	public int addStudent(Student stu) {
-		// TODO Auto-generated method stub
 		return studentMapper.insert(stu);
 	}
 	public String toString(){

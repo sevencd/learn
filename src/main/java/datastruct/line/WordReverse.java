@@ -1,14 +1,12 @@
 package datastruct.line;
 
-import java.util.Queue;
-
 public class WordReverse {
 	private String str;
 	public WordReverse(String str) {
 		this.str=str;
 	}
 	public String doReverse(){
-		CharStack c=new CharStack(str.length());
+		ArrayStack<Character> c=new ArrayStack(str.length());
 		for (int i = 0; i < str.length(); i++) {
 			c.push(str.charAt(i));
 		}

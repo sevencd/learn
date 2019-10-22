@@ -12,12 +12,10 @@ public class AbstactOrder implements A {
     }
 
     public void a(int a) {
-        // TODO Auto-generated method stub
         System.out.println(a);
     }
 
     public void a(String a) {
-        // TODO Auto-generated method stub
         System.out.println(a + "dj");
     }
 
