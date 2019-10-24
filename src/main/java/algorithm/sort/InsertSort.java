@@ -4,11 +4,19 @@ package algorithm.sort;
 并保证已排序区间数据一直有序。重复这个过程，直到未排序区间中元素为空，算法结束。
  */
 public class InsertSort extends Sort {
+    InsertSort(int size) {
+        a = new int[size];
+    }
     public static void main(String[] args) {
-        InsertSort sort = new InsertSort();
-        int[] a = {1, 3, 5, 2, 4, 6};
-        sort.insertSort(a, a.length);
-        sort.display(a, a.length);
+        int size=5;
+        InsertSort sort = new InsertSort(5);
+        sort.createData();
+        System.out.print("排序前数据为");
+        sort.display(sort.a, sort.a.length);
+        System.out.println();
+        sort.insertSort(sort.a, size - 1);
+        System.out.print("排序后数据为");
+        sort.display(sort.a, size);
     }
     // 插入排序，a 表示数组，n 表示数组大小
     public void insertSort(int[] a, int n) {

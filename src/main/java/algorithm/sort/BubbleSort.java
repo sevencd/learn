@@ -6,11 +6,19 @@ package algorithm.sort;
 一次冒泡会让至少一个元素移动到它应该在的位置，重复 n 次，就完成了 n 个数据的排序工作。
  */
 public class BubbleSort extends Sort {
+    BubbleSort(int size) {
+        a = new int[size];
+    }
     public static void main(String[] args) {
-        BubbleSort sort = new BubbleSort();
-        int[] a = {1, 3, 5, 2, 4, 6};
-        sort.bubbleSort(a, a.length);
-        sort.display(a, a.length);
+        int size=5;
+        BubbleSort sort = new BubbleSort(5);
+        sort.createData();
+        System.out.print("排序前数据为");
+        sort.display(sort.a, sort.a.length);
+        System.out.println();
+        sort.bubbleSort(sort.a, size - 1);
+        System.out.print("排序后数据为");
+        sort.display(sort.a, size);
     }
 
 

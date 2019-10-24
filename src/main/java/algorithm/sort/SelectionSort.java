@@ -4,12 +4,19 @@ package algorithm.sort;
 但是选择排序每次会从未排序区间中找到最小的元素，将其放到已排序区间的末尾。
  */
 public class SelectionSort extends Sort {
-
+    SelectionSort(int size) {
+        a = new int[size];
+    }
     public static void main(String[] args) {
-        SelectionSort sort = new SelectionSort();
-        int[] a = {1, 3, 5, 2, 4, 6};
-        sort.selectionSort(a, a.length);
-        sort.display(a, a.length);
+        int size=5;
+        SelectionSort sort = new SelectionSort(5);
+        sort.createData();
+        System.out.print("排序前数据为");
+        sort.display(sort.a, sort.a.length);
+        System.out.println();
+        sort.selectionSort(sort.a, size - 1);
+        System.out.print("排序后数据为");
+        sort.display(sort.a, size);
     }
     // 选择排序，a 表示数组，n 表示数组大小
     public void selectionSort(int[] a, int n) {
