@@ -19,7 +19,7 @@ public class InsertSort extends Sort {
         sort.display(sort.a, size);
     }
     // 插入排序，a 表示数组，n 表示数组大小
-    public void insertSort(int[] a, int n) {
+    private void insertSort(int[] a, int n) {
         for (int i = 1; i < n; i++) {
             int value = a[i];
             //插入点

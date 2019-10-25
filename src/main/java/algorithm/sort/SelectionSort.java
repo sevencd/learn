@@ -19,7 +19,7 @@ public class SelectionSort extends Sort {
         sort.display(sort.a, size);
     }
     // 选择排序，a 表示数组，n 表示数组大小
-    public void selectionSort(int[] a, int n) {
+    private void selectionSort(int[] a, int n) {
         int tmp;
         int min;//最小值
         for (int i = 0; i < a.length - 1; i++) {
