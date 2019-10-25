@@ -5,7 +5,7 @@ package algorithm.sort;
 我们选择 p 到 r 之间的任意一个数据作为 pivot（分区点）。
  */
 public class QuickSort extends Sort {
-    QuickSort(int size) {
+    public QuickSort(int size) {
         a = new int[size];
     }
 
@@ -21,14 +21,14 @@ public class QuickSort extends Sort {
 
     }
 
-    private void quickSort(int[] a, int p, int r) {
+    public void quickSort(int[] a, int p, int r) {
         if (p >= r) return;
         int q = partition(a, p, r); // 获取分区点
         quickSort(a, p, q - 1);
         quickSort(a, q + 1, r);
     }
 
-    private int partition(int[] a, int p, int r) {
+    public int partition(int[] a, int p, int r) {
         int pivot = a[r];//用来确定分区点的值
         int i = p;//确定分区点
         for (int j = p; j < r;j++ ) {
