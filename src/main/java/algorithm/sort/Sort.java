@@ -4,7 +4,7 @@ import java.util.Random;
 
 abstract class Sort {
     protected int[] a;
-
+    protected int size;
 
 
     protected void createData() {

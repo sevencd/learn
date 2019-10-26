@@ -5,8 +5,10 @@ package algorithm.sort;
  */
 public class SelectionSort extends Sort {
     SelectionSort(int size) {
+        this.size=size;
         a = new int[size];
     }
+
     public static void main(String[] args) {
         int size=5;
         SelectionSort sort = new SelectionSort(5);
