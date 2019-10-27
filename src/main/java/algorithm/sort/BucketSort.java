@@ -48,8 +48,10 @@ public class BucketSort extends Sort{
         }
         return result;
     }
-    private void bucketSort(int[][] bucket) {
+    private void bucketSort(int[][] bucket,int bucketSize) {
+        int[] result = new int[this.size];//排序好的结果数组
         for (int i = 0; i <size ; i++) {
+            int bucketLocation = a[i]/bucketSize;
             if(a[i]<2&&a[i]>0){
                 int value = a[i];
                 //插入点
@@ -60,6 +62,12 @@ public class BucketSort extends Sort{
                 }
                 a[j] = value;
 
+            }
+        }
+        for(int i = 0,j = 0; i < bucketSize; i++){
+            int k=0;
+            while(k<bucket[i].length){
+                result[j++] =bucket[i][k++];
             }
         }
     }
