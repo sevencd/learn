@@ -8,15 +8,14 @@ abstract class Sort {
 
 
     protected void createData() {
-        for (int i = 0; i < a.length; i++) {
+        for (int i = 0; i < size; i++) {
             a[i] = new Random().nextInt(20);
         }
     }
 
-    protected void display(int[] a, int n) {
-        for (int i = 0; i < n; i++) {
+    protected void display() {
+        for (int i = 0; i < size; i++) {
             System.out.print(a[i] + ",");
-
         }
     }
 }

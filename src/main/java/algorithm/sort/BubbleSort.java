@@ -7,23 +7,25 @@ package algorithm.sort;
  */
 public class BubbleSort extends Sort {
     BubbleSort(int size) {
+        this.size=size;
         a = new int[size];
     }
     public static void main(String[] args) {
         int size=5;
-        BubbleSort sort = new BubbleSort(5);
+        BubbleSort sort = new BubbleSort(size);
         sort.createData();
         System.out.print("排序前数据为");
-        sort.display(sort.a, sort.a.length);
+        sort.display();
         System.out.println();
-        sort.bubbleSort(sort.a, size - 1);
+        sort.bubbleSort();
         System.out.print("排序后数据为");
-        sort.display(sort.a, size);
+        sort.display();
     }
 
 
     // 冒泡排序，a 表示数组，n 表示数组大小
-    private void bubbleSort(int[] a, int n) {
+    private void bubbleSort() {
+        int n=size-1;
         for (int i = 0; i < n; i++) {
             // 提前退出冒泡循环的标志位
             boolean flag = false;

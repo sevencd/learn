@@ -6,6 +6,7 @@ package algorithm.sort;
  */
 public class QuickSort extends Sort {
     public QuickSort(int size) {
+        this.size=size;
         a = new int[size];
     }
 
@@ -13,22 +14,22 @@ public class QuickSort extends Sort {
         QuickSort sort = new QuickSort(5);
         sort.createData();
         System.out.print("排序前数据为");
-        sort.display(sort.a, sort.a.length);
+        sort.display();
         System.out.println();
-        sort.quickSort(sort.a, 0, sort.a.length - 1);
+        sort.quickSort(0, sort.size - 1);
         System.out.print("排序后数据为");
-        sort.display(sort.a, sort.a.length);
+        sort.display();
 
     }
 
-    private void quickSort(int[] a, int p, int r) {
+    private void quickSort(int p, int r) {
         if (p >= r) return;
-        int q = partition(a, p, r); // 获取分区点
-        quickSort(a, p, q - 1);
-        quickSort(a, q + 1, r);
+        int q = partition(p, r); // 获取分区点
+        quickSort( p, q - 1);
+        quickSort(q + 1, r);
     }
 
-    protected int partition(int[] a, int p, int r) {
+    protected int partition( int p, int r) {
         int pivot = a[r];//用来确定分区点的值
         int i = p;//确定分区点
         for (int j = p; j < r;j++ ) {

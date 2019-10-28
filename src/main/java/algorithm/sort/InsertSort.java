@@ -1,26 +1,30 @@
 package algorithm.sort;
+
 /*
 插入算法的核心思想是取未排序区间中的元素，在已排序区间中找到合适的插入位置将其插入，
 并保证已排序区间数据一直有序。重复这个过程，直到未排序区间中元素为空，算法结束。
  */
 public class InsertSort extends Sort {
     InsertSort(int size) {
+        this.size = size;
         a = new int[size];
     }
+
     public static void main(String[] args) {
-        int size=5;
-        InsertSort sort = new InsertSort(5);
+        int size = 5;
+        InsertSort sort = new InsertSort(size);
         sort.createData();
         System.out.print("排序前数据为");
-        sort.display(sort.a, sort.a.length);
+        sort.display();
         System.out.println();
-        sort.insertSort(sort.a, size - 1);
+        sort.insertSort();
         System.out.print("排序后数据为");
-        sort.display(sort.a, size);
+        sort.display();
     }
+
     // 插入排序，a 表示数组，n 表示数组大小
-    public void insertSort(int[] a, int n) {
-        for (int i = 1; i < n; i++) {
+    public void insertSort() {
+        for (int i = 1; i < size; i++) {
             int value = a[i];
             //插入点
             int j = 0;

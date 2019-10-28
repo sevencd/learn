@@ -11,17 +11,17 @@ public class SelectionSort extends Sort {
 
     public static void main(String[] args) {
         int size=5;
-        SelectionSort sort = new SelectionSort(5);
+        SelectionSort sort = new SelectionSort(size);
         sort.createData();
         System.out.print("排序前数据为");
-        sort.display(sort.a, sort.a.length);
+        sort.display();
         System.out.println();
-        sort.selectionSort(sort.a, size - 1);
+        sort.selectionSort();
         System.out.print("排序后数据为");
-        sort.display(sort.a, size);
+        sort.display();
     }
     // 选择排序，a 表示数组，n 表示数组大小
-    private void selectionSort(int[] a, int n) {
+    private void selectionSort() {
         int tmp;
         int min;//最小值
         for (int i = 0; i < a.length - 1; i++) {

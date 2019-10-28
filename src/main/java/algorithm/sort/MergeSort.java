@@ -2,32 +2,32 @@ package algorithm.sort;
 
 public class MergeSort extends Sort {
     MergeSort(int size) {
+        this.size=size;
         a = new int[size];
     }
     public static void main(String[] args) {
         MergeSort sort = new MergeSort(5);
         sort.createData();
         System.out.print("排序前数据为");
-        sort.display(sort.a, sort.a.length);
+        sort.display();
         System.out.println();
-        sort.mergeSort(sort.a, 0, sort.a.length - 1);
+        sort.mergeSort(0, sort.size - 1);
         System.out.print("排序后数据为");
-        sort.display(sort.a, sort.a.length);
+        sort.display();
 
     }
 
-    private void mergeSort(int[] a, int p, int r) {
+    private void mergeSort(int p, int r) {
         // 递归终止条件
-
         if (p >= r) return;
         int q = (p + r) / 2;
-        mergeSort(a, p, q);
-        mergeSort(a, q + 1, r);
-        merge(a, p, q, r);
+        mergeSort(p, q);
+        mergeSort(q + 1, r);
+        merge(p, q, r);
     }
 
-    private void merge(int[] a, int p, int q, int r) {
-        int[] tmp = new int[a.length];
+    private void merge(int p, int q, int r) {
+        int[] tmp = new int[size];
         int k = 0;
         int i = p;
         int j = q + 1;
