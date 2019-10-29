@@ -16,4 +16,9 @@ public class Search {
             System.out.print(a[i] + ",");
         }
     }
+    protected void display(int[] a,int size) {
+        for (int i = 0; i < size; i++) {
+            System.out.print(a[i] + ",");
+        }
+    }
 }
