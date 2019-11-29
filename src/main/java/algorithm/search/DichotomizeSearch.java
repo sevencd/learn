@@ -1,7 +1,9 @@
 package algorithm.search;
 
 import algorithm.sort.InsertSort;
-
+/*
+二分查找
+ */
 public class DichotomizeSearch extends Search {
     public DichotomizeSearch(int size) {
         this.size = size;
